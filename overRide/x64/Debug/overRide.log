@@ -1,0 +1,29 @@
+﻿  OverRide.cpp
+C:\Users\chavk\Documents\TU\oop c++\overRide\OverRide.cpp(108,4): error C2248: 'Quad::p1': cannot access private member declared in class 'Quad'
+      C:\Users\chavk\Documents\TU\oop c++\overRide\OverRide.cpp(46,8):
+      see declaration of 'Quad::p1'
+      C:\Users\chavk\Documents\TU\oop c++\overRide\OverRide.cpp(44,7):
+      see declaration of 'Quad'
+  
+C:\Users\chavk\Documents\TU\oop c++\overRide\OverRide.cpp(109,4): error C2248: 'Quad::p2': cannot access private member declared in class 'Quad'
+      C:\Users\chavk\Documents\TU\oop c++\overRide\OverRide.cpp(47,8):
+      see declaration of 'Quad::p2'
+      C:\Users\chavk\Documents\TU\oop c++\overRide\OverRide.cpp(44,7):
+      see declaration of 'Quad'
+  
+C:\Users\chavk\Documents\TU\oop c++\overRide\OverRide.cpp(110,4): error C2248: 'Quad::p3': cannot access private member declared in class 'Quad'
+      C:\Users\chavk\Documents\TU\oop c++\overRide\OverRide.cpp(48,8):
+      see declaration of 'Quad::p3'
+      C:\Users\chavk\Documents\TU\oop c++\overRide\OverRide.cpp(44,7):
+      see declaration of 'Quad'
+  
+C:\Users\chavk\Documents\TU\oop c++\overRide\OverRide.cpp(111,4): error C2248: 'Quad::p4': cannot access private member declared in class 'Quad'
+      C:\Users\chavk\Documents\TU\oop c++\overRide\OverRide.cpp(49,8):
+      see declaration of 'Quad::p4'
+      C:\Users\chavk\Documents\TU\oop c++\overRide\OverRide.cpp(44,7):
+      see declaration of 'Quad'
+  
+C:\Users\chavk\Documents\TU\oop c++\overRide\OverRide.cpp(116,10): error C2084: function 'std::istream &operator >>(std::istream &,Quad &)' already has a body
+      C:\Users\chavk\Documents\TU\oop c++\overRide\OverRide.cpp(105,10):
+      see previous definition of 'operator >>'
+  

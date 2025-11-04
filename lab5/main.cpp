@@ -67,6 +67,7 @@ public:
 };
 
 int main() {
+	//Somewhat polymorphism
 	vector<string> ing = { "salt","meat","water" };
 	Book* atomicHabits = new Book("2022-12-03", 12.99f, "Atomic Habits", "James Clear");
 	FoodStock* ham = new FoodStock("Ham", "2025-03-05", 6.99f, "2025-12-12", ing, 150);

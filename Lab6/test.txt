@@ -1,0 +1,24 @@
+Name: Resistor 1.0
+Nomenclature: R-100om-5%
+Value: 100.000000 OM
+Made in: Bangladesh
+Price: 0.250000$
+-------------
+Name: Resistor 2.0
+Nomenclature: R-500om-5%
+Value: 500.000000 OM
+Made in: Bangladesh
+Price: 1.250000$
+-------------
+Name: Capacitor 1.0
+Nomenclature: C-250f-0
+Value: 250.000000 F
+Made in: India
+Price: 2.000000$
+-------------
+Name: Capacitor 2.0
+Nomenclature: C-760f-0
+Value: 760.000000 F
+Made in: China
+Price: 5.200000$
+-------------

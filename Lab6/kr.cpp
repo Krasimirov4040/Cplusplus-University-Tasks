@@ -9,8 +9,8 @@ using namespace std;
 //функции за извеждане А
 //добавяне и изтриване на елементи A
 //намиране на кондензатори в дадени граници по стойност A
-//предефиниране на operator<<
-//съхранение във файл
+//предефиниране на operator<< A
+//съхранение във файл A
 
 class ElectronicComponent {
 protected:
@@ -33,7 +33,7 @@ public:
 			<< "Value: " << value << " " << unit << endl;
 	}
 
-	// COPY CONSTRUCTOR
+	// copy constructor
 	ElectronicComponent(const ElectronicComponent& other)
 		: nomenclature(other.nomenclature),
 		name(other.name),
@@ -64,7 +64,7 @@ public:
 
 	}
 
-	// COPY CONSTRUCTOR
+
 	Capacitor(const Capacitor& other)
 		: ElectronicComponent(other),
 		country(other.country),
@@ -104,7 +104,7 @@ public:
 		//cout << "Resistor created!!!" << endl;
 	}
 	
-	// COPY CONSTRUCTOR
+
 	Resistor(const Resistor& other)
 		: ElectronicComponent(other),  // вика copy на базовия клас
 		country(other.country),
@@ -145,12 +145,12 @@ public:
 	}
 
 	void removeComponent(const string& nomenclature) {
-		for (auto it = list.begin(); it != list.end();) {
-			if ((*it)->nomenclature == nomenclature) {
-				it = list.erase(it);
+		for (auto i = list.begin(); i != list.end();) {
+			if ((*i)->nomenclature == nomenclature) {
+				i= list.erase(i);
 			}
 			else {
-				++it;
+				++i;
 			}
 		}
 	}
@@ -161,7 +161,7 @@ public:
 		}
 	}
 
-	void prinToFile() {
+	void printToFile() {
 		ofstream file("test.txt");
 		for (auto comp : list) {
 			file<<comp->toString()<<"\n-------------\n";
@@ -181,9 +181,10 @@ public:
 				capacitorValue *= 1000;   // kilofarad to farad
 			}
 
-			if (capacitorValue >= min && capacitorValue <= max && capacitor->unit=="F"|| capacitor->unit == "mF"|| capacitor->unit == "kF") {
-				capacitor->print();
+			if (capacitorValue >= min && capacitorValue <= max && (capacitor->unit=="F"|| capacitor->unit == "mF"|| capacitor->unit == "kF")) {
+
 				cout << "--------------------------" << endl;
+				capacitor->print();
 			}
 		}
 	}
@@ -205,22 +206,6 @@ ostream& operator<<(ostream& os, Resistor& res) {
 		<< "Price: " << res.price << endl;
 	return os;
 }
-//ostream& operator<<(ostream& os, const ElectronicComponent& comp) {
-//	os << "Name: " << comp.name << "\n"
-//		<< "Nomenclature: " << comp.nomenclature << "\n"
-//		<< "Value: " << comp.value << " " << comp.unit << "\n";
-//
-//	// Ако е Capacitor или Resistor – добави допълнително
-//	auto* cap = dynamic_cast<const Capacitor*>(&comp);
-//	auto* res = dynamic_cast<const Resistor*>(&comp);
-//
-//	if (cap || res) {
-//		os << "Made in: " << comp.country << "\n"
-//			<< "Price: " << comp.price << "$\n";
-//	}
-//
-//	return os;
-//}
 
 int main() {
 
@@ -235,15 +220,14 @@ int main() {
 	list.addComponent(resistor2);
 	list.addComponent(capacitor1);
 	list.addComponent(capacitor2);
+	cout << capacitor1 << endl;
+	cout << resistor1 << endl;
+	cout << capacitor2 << endl;
+	cout << resistor2<<endl;
+	list.printToFile();
 
-	list.prinToFile();
 
-
-	/*ofstream file("test.txt");
-	file << capacitor1;*/
-	//cout << capacitor1;
-	//list.findCapacitors(200, 800);
-	//list.printToFile();
+	list.findCapacitors(200, 800);
 	//list.removeComponent(resistor1.getNomenclature());
 	//list.removeComponent(capacitor2.getNomenclature());
 	//list.print();

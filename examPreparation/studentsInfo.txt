@@ -1,0 +1,24 @@
+Name: Ivan
+Faculty number: 1234555
+Birth date:12.10.1998
+Average grade: 5.45
+
+-----------------
+Name: Gundi
+Faculty number: 454555
+Birth date:15.4.2012
+Average grade: 4.45
+
+-----------------
+Name: Dundi
+Faculty number: 45678988
+Birth date:1.11.2003
+Average grade: 3.45
+
+-----------------
+Name: Mundi
+Faculty number: 45678988
+Birth date:1.1.2005
+Average grade: 5
+
+-----------------

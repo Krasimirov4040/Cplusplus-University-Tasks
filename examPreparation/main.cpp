@@ -70,21 +70,14 @@ public:
 	}
 	int getAge(Date& date) {
 		int age = date.getYear() - birthDate.getYear();
-
-		if (birthDate.getMonth() < date.getMonth()) {
-			age++;
-		}
-		else if (birthDate.getMonth() == date.getMonth()) {
-			if (birthDate.getDay() < date.getDay()|| birthDate.getDay() == date.getDay()) {
-				age++;
-			}
-		}
+		if ((date.getMonth() == birthDate.getMonth() && date.getDay() < birthDate.getDay()) || date.getMonth() < birthDate.getMonth())
+			age--;
 		return age;
 	}
 	Student(){
 		name="";
 		facNum=0;
-		birthDate;
+		birthDate=Date();
 		avgGrade=0;
 	}
 	Student(string name,int facNum,Date bd,double avgGrade):name(name),facNum(facNum),birthDate(bd),avgGrade(avgGrade){}
@@ -114,6 +107,10 @@ public:
 	}
 
 	Student findTheBest() {
+		if (students.empty()) {
+			cout << "No students in this potok yet!" << endl;
+			return Student();
+		}
 		Student theBest=*students.begin();
 		for (auto& s : students) {
 			if (s.getAverageGrade() > theBest.getAverageGrade())
@@ -125,7 +122,7 @@ public:
 	void findStudentsBetween18N26() {
 		Date today(19, 11, 2025);
 		for (auto& s : students) {
-			if (s.getAge(today) > 18 && s.getAge(today) < 26) {
+			if (s.getAge(today) >= 18 && s.getAge(today) <= 26) {
 				cout << s;
 			}
 		}
@@ -133,6 +130,7 @@ public:
 //Данните да се съхраняват във файл.
 	void savetoFile() {
 		ofstream myFile("studentsInfo.txt");
+		if (!myFile.is_open()) cerr << "Error!";
 		for (auto& s : students) {
 			myFile << s;
 			myFile << "-----------------" << endl;
